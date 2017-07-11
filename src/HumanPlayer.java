@@ -9,7 +9,7 @@ public class HumanPlayer extends Player {
     public Roshambo generateRoshambo() {
         Scanner scnr = new Scanner(System.in);
         System.out.println("Choose rock(r), paper(p), or scissors(s): ");
-        String userChoice = scnr.next();
+        String userChoice = scnr.nextLine();
         Roshambo choice = null;
         if(userChoice.equalsIgnoreCase("r") ){
 //

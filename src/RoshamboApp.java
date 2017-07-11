@@ -11,6 +11,7 @@ public class RoshamboApp {
         HumanPlayer name = new HumanPlayer();
         String userName = name.getName();
         System.out.println();
+        Validation validate = new Validation();
 
 //        String choice = "";
 //        Validation validCheck = new Validation();
@@ -21,6 +22,8 @@ public class RoshamboApp {
             System.out.println("Who would you like to play against, Autoplayer 1 or Autoplayer2? (A1/A2): ");
             //scnr.next();
             String playerChoice = scnr.nextLine();
+
+            validate.playerValidation(playerChoice);
 
             AutoPlayer1 player1 = new AutoPlayer1();
             AutoPlayer2 player2 = new AutoPlayer2();
@@ -80,9 +83,9 @@ public class RoshamboApp {
 
             System.out.println();
             System.out.println("Would you like to continue? (Y/N)");
-            keepGoing = scnr.next();
+            keepGoing = scnr.nextLine();
 
-        } while (keepGoing.equalsIgnoreCase("y") && (!keepGoing.equalsIgnoreCase("N")));
-
+        } while (validate.continueValidation(keepGoing));
+        System.out.println("Goodbye");
     }
 }
